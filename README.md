@@ -5,22 +5,55 @@ Scalatra Sandbox [![travis-badge][]][travis]
 [travis-badge]:          https://travis-ci.org/mycaule/scalatra-sandbox.svg?branch=master
 
 This repository is for tests and learning the framework.
-This might be converted to a [giter8](https://github.com/foundweekends/giter8) template when this is more mature.
 
 ### Usage
 
 ```sh
+# Compile sources and test files
 $ sbt compile
-
 $ sbt test:compile
 
+# Run server locally with restart on changes
 $ sbt ~jetty:start
+
+# Deploy on Heroku
+$ heroku login
+$ heroku create
+$ git push heroku master
 ```
 
-Swagger API specification available at [/api-docs/swagger.json](http://localhost:8080/api-docs/swagger.json).
-Then visualize it online at [https://editor.swagger.io/](https://editor.swagger.io/) or [https://swagger.io/swagger-ui/](https://swagger.io/swagger-ui/).
+### Getting started
+| Route  |  Sources |  Description  |
+|--------|----------|---------------|
+| [/teams](https://afternoon-wildwood-38058.herokuapp.com/teams)  | [TeamsController.scala](src/main/scala/com/sandbox/teams/TeamsController.scala)  | List of all teams |
+| [/api-docs/swagger.json](https://afternoon-wildwood-38058.herokuapp.com/api-docs/swagger.json) | [FootballSwagger.scala](src/main/scala/com/sandbox/FootballSwagger.scala) | Swagger v2 JSON specification, see [Swagger UI](http://petstore.swagger.io/?url=https://afternoon-wildwood-38058.herokuapp.com/api-docs/swagger.json) |
+| [/status](https://afternoon-wildwood-38058.herokuapp.com/status) | [StatusController.scala](src/main/scala/com/sandbox/status/StatusController.scala) | Healthcheck  |
+
+### Roadmap
+
+- [ ] JSON: https://github.com/scalatra/scalatra-website/blob/master/content/guides/2.6/formats/json.md
+- [ ] IntelliJ IDEA Support:
+  - https://github.com/scalatra/scalatra-website/blob/master/content/getting-started/ide-support.md,gi
+  - https://www.jetbrains.com/help/idea/sbt-support.html
+- [ ] [Deployment](https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6/deployment)
+- [ ] Monitoring:
+  - https://github.com/scalatra/scalatra-website/blob/master/content/guides/2.6/monitoring/logging.md
+  - https://github.com/scalatra/scalatra-website/blob/master/content/guides/2.6/monitoring/metrics.md
+  - http://kamon.io/teamblog/2015/08/08/twenty-minutes-in-the-playground-monitoring-scalatra-with-kamon/
+- [ ] Persistence:
+  - https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6/persistence
+- [ ] Tests: (migrate to scalatest)
+  - https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6/testing
+- [ ] Convert to a [giter8](https://github.com/foundweekends/giter8) template
 
 ### References
 
+- [Scalatra guides](https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6), Scalatra.org down, run locally using `git clone` and `hugo serve`
 - [Scalatra Website examples](https://github.com/scalatra/scalatra-website-examples)
 - [Scalatra in Action examples](https://github.com/scalatra/scalatra-in-action)
+
+### Testing tools
+- [Swagger Editor](https://editor.swagger.io/)
+- [Swagger UI](https://swagger.io/swagger-ui/)
+- [Dredd](https://github.com/apiaryio/dredd)
+- Mock servers: [SwaggerHub](https://swagger.io/tools/swaggerhub/), [Postman](https://www.getpostman.com)

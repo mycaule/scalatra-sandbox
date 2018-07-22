@@ -23,7 +23,7 @@ scalacOptions ++= Seq(
 )
 
 lazy val root = (project in file(".")).
-  enablePlugins(BuildInfoPlugin, ScalatraPlugin).
+  enablePlugins(JavaAppPackaging, BuildInfoPlugin, ScalatraPlugin).
   settings(
     inThisBuild(List(
       organization := "com.sandbox",
@@ -41,7 +41,7 @@ lazy val root = (project in file(".")).
       "org.scalatra" %% "scalatra-specs2" % "2.6.+" % Test,
       "org.json4s" %% "json4s-native" % "3.5.3",
       "ch.qos.logback" % "logback-classic" % "1.2.3" % Provided,
-      "org.eclipse.jetty" % "jetty-webapp" % "9.4.7.v20170914" % Provided,
+      "org.eclipse.jetty" % "jetty-webapp" % "9.4.8.v20171121" % "compile;container",
       "javax.servlet" % "javax.servlet-api" % "3.1.0" % Provided
     )
   )
