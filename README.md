@@ -31,24 +31,18 @@ $ git push heroku master
 
 ### Roadmap
 
-- [ ] JSON: https://github.com/scalatra/scalatra-website/blob/master/content/guides/2.6/formats/json.md
-- [ ] IntelliJ IDEA Support:
-  - https://github.com/scalatra/scalatra-website/blob/master/content/getting-started/ide-support.md,gi
-  - https://www.jetbrains.com/help/idea/sbt-support.html
+- [ ] [JSON](https://github.com/scalatra/scalatra-website/blob/master/content/guides/2.6/formats/json.md)
 - [ ] [Deployment](https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6/deployment)
 - [ ] Monitoring:
   - https://github.com/scalatra/scalatra-website/blob/master/content/guides/2.6/monitoring/logging.md
   - https://github.com/scalatra/scalatra-website/blob/master/content/guides/2.6/monitoring/metrics.md
   - http://kamon.io/teamblog/2015/08/08/twenty-minutes-in-the-playground-monitoring-scalatra-with-kamon/
-- [ ] Persistence:
-  - https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6/persistence
-- [ ] Tests: (migrate to scalatest)
-  - https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6/testing
-- [ ] Convert to a [giter8](https://github.com/foundweekends/giter8) template
+- [ ] [Persistence](https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6/persistence)
+- [ ] [Using scalatest](https://scalatra.org/guides/2.6/testing/scalatest.html)
 
 ### References
 
-- [Scalatra guides](https://github.com/scalatra/scalatra-website/tree/master/content/guides/2.6), Scalatra.org down, run locally using `git clone` and `hugo serve`
+- [Scalatra guides](https://scalatra.org/guides/2.6/)
 - [Scalatra Website examples](https://github.com/scalatra/scalatra-website-examples)
 - [Scalatra in Action examples](https://github.com/scalatra/scalatra-in-action)
 

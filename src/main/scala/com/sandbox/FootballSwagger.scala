@@ -1,7 +1,7 @@
 package com.sandbox
 
 import org.scalatra.ScalatraServlet
-import org.scalatra.swagger.{ ApiInfo, NativeSwaggerBase, Swagger }
+import org.scalatra.swagger._
 
 class ResourcesApp(implicit val swagger: Swagger) extends ScalatraServlet with NativeSwaggerBase
 
@@ -10,9 +10,8 @@ object FootballSwagger {
     "The Football API",
     "Docs for the Football API",
     "http://scalatra.org",
-    "github.com/mycaule",
-    "MIT",
-    "http://opensource.org/licenses/MIT"
+    ContactInfo("Scalatra Team", "apiteam@scalatra.org", "https://github.com/mycaule"),
+    LicenseInfo("MIT", "http://opensource.org/licenses/MIT")
   )
 }
 

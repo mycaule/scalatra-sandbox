@@ -14,34 +14,32 @@ scalacOptions ++= Seq(
   "-language:implicitConversions",
   "-unchecked",
   "-Xlint",
-  "-Yno-adapted-args",
   "-Ywarn-dead-code",
   "-Ywarn-numeric-widen",
-  "-Ywarn-value-discard",
-  "-Xfuture",
-  "-Ywarn-unused-import"
+  "-Ywarn-value-discard"
 )
+
+val ScalatraVersion = "2.7.0-RC1"
 
 lazy val root = (project in file(".")).
   enablePlugins(JavaAppPackaging, BuildInfoPlugin, ScalatraPlugin).
   settings(
     inThisBuild(List(
       organization := "com.sandbox",
-      scalaVersion := "2.12.4",
-      version      := "0.2.0-SNAPSHOT"
+      scalaVersion := "2.13.0",
+      version := "0.2.0-SNAPSHOT"
     )),
     name := "scalatra-sandbox",
     buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
     buildInfoPackage := "com.sandbox",
     buildInfoOptions += BuildInfoOption.BuildTime,
     libraryDependencies ++= Seq(
-      "org.scalatra" %% "scalatra" % "2.6.+",
-      "org.scalatra" %% "scalatra-swagger" % "2.6.+",
-      "org.scalatra" %% "scalatra-scalate" % "2.6.+",
-      "org.scalatra" %% "scalatra-specs2" % "2.6.+" % Test,
-      "org.json4s" %% "json4s-native" % "3.5.3",
-      "ch.qos.logback" % "logback-classic" % "1.2.3" % Provided,
-      "org.eclipse.jetty" % "jetty-webapp" % "9.4.8.v20171121" % "compile;container",
-      "javax.servlet" % "javax.servlet-api" % "3.1.0" % Provided
+      "org.scalatra" %% "scalatra" % ScalatraVersion,
+      "org.scalatra" %% "scalatra-swagger" % ScalatraVersion,
+      "org.scalatra" %% "scalatra-scalate" % ScalatraVersion,
+      "org.scalatra" %% "scalatra-scalatest" % ScalatraVersion % Test,
+      "org.eclipse.jetty" % "jetty-webapp" % "9.4.19.v20190610" % Compile,
+      "javax.servlet" % "javax.servlet-api" % "3.1.0" % Compile,
+      "org.json4s" %% "json4s-native" % "3.6.7"
     )
   )

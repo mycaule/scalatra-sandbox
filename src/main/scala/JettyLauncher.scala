@@ -1,6 +1,6 @@
 import org.eclipse.jetty.server.Server
+import org.eclipse.jetty.servlet.DefaultServlet
 import org.eclipse.jetty.webapp.WebAppContext
-import org.scalatra.servlet.ScalatraListener
 
 // For Heroku
 object JettyLauncher {
@@ -11,8 +11,7 @@ object JettyLauncher {
     val context = new WebAppContext()
     context.setContextPath("/")
     context.setResourceBase("src/main/webapp")
-
-    context.setEventListeners(Array(new ScalatraListener))
+    context.addServlet(classOf[DefaultServlet], "/")
 
     server.setHandler(context)
 
